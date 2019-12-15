@@ -44,11 +44,11 @@ _author_ = "sheetansh"
 def aPowerb(a, b):
     if (b==0):
         return 1
-    store = aPowerb(a, int(b/2))
+    store = aPowerb(a, b//2)
     if(b %2 == 0):
-        return store*store
+        return ((store%1000000007)*(store%1000000007))%1000000007
     else:
-        return a*store*store
+        return (a*((store%1000000007)*(store%1000000007))%1000000007)%1000000007
 
 t = int(input())
 for _ in range(t):
