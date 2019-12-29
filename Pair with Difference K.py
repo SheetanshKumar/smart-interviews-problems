@@ -34,15 +34,27 @@ false
 
 _author_ = "sheetansh"
 
-t = int(input())
-for _ in range(t):
+
+def BinarySearch(arr, x, low, high):
+    if (low > high):
+        return "false"
+    mid = (low + high) // 2
+    if (arr[mid] == x):
+        return "true"
+    elif (arr[mid] > x):
+        return BinarySearch(arr, x, low, mid - 1)
+    else:
+        return BinarySearch(arr, x, mid + 1, high)
+
+
+for _ in range(int(input())):
     n, k = list(map(int, input().split()))
     arr = list(map(int, input().split()))
     arr.sort()
-    i, j = 0, n-1
-    flag = "false"
+    ans = "false"
     for i in range(len(arr)):
-        if arr[i] + k in arr[i+1:]:
-            flag = "true"
+        s = arr[i] + k
+        if (BinarySearch(arr, s, i + 1, n - 1)) == "true":
+            ans = "true"
             break
-    print(flag)
+    print(ans)

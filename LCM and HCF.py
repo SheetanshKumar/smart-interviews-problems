@@ -43,3 +43,4 @@ def lcm(a, b):
 for _ in range(int(input())):
     a, b = list(map(int, input().split()))
     print("{} {}".format(lcm(a,b),hcf(a,b)))
+

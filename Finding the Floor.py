@@ -50,15 +50,17 @@ arr = list(map(int, input().split()))
 arr.sort()
 for _ in range(int(input())):
     q = int(input())
-    flag = 0
-    i = 0
-    while(i < len(arr)):
-        if arr[i] > q:
-            # print(arr[i], q)
-            flag = 1
+    floor = -2147483648
+    low, high = 0, n - 1
+    mid = 0
+    while (low <= high):
+        mid = (low + high) // 2
+        if (arr[mid] == q):
+            floor = q
             break
-        i+=1
-    if(flag and i!=0):
-        print(arr[i-1])
-    else:
-        print(-2147483648)
+        elif (arr[mid] > q):
+            high = mid - 1
+        else:
+            floor = arr[mid]
+            low = mid + 1
+    print(floor)
