@@ -37,4 +37,4 @@ _author_ = "sheetansh"
 
 for _ in range(int(input())):
     n = int(input())
-    print((n & (n-1)) == 0)
+    print(n and (n & (n-1)) == 0)
