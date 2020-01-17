@@ -13,5 +13,5 @@ def subset(A):
     tempres = []
     subsetUtil(A,tempres,0)
 
-print(subset([1,2,3]))
+subset([1,2,3])
 print(res)
