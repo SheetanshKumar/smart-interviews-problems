@@ -44,7 +44,7 @@ Sample Output 0
 #include <algorithm>
 using namespace std;
 
-long aPowerb(long long x, long long y){
+long long aPowerb(long long x, long long y){
     if (y== 0)
         return 1;
     long long store = aPowerb(x, y/2);
