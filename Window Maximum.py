@@ -56,25 +56,46 @@ Total Sum = 15 + 15 + 12 = 42'''
 import heapq
 
 from collections import Counter
+from collections import deque
 
+def findWindowMaxSum(arr, k):
+    s = 0
+    dq = deque()
+    for i in range(k):
+        while (len(dq) != 0 and arr[i] > dq[-1]):
+            dq.pop()
+        dq.append(arr[i])
+    s = max(arr[:k])
+    for i in range(k, len(arr)):
+        while(len(dq) != 0 and arr[i] > dq[-1]):
+            dq.pop()
+        dq.append(arr[i])
+
+        if dq[0] == arr[i-k]:
+            dq.popleft()
+        s += dq[0]
+    return s
+
+# findWindowMaxSum([11, 15, 12, 9 ], 2)
 for _ in range(int(input())):
     n, k = list(map(int, input().split()))
     arr = list(map(int, input().split()))
-    res = 0
-    heap = arr[:k]
-    heapq._heapify_max(heap)
-    res+=heap[0]
-    j = 0
-
-    mp = dict(Counter(heap))
-    for i in range(k, n):
-        mp[arr[j]]-=1
-        if mp[arr[j]] ==0:
-            del mp[arr[j]]
-        try:
-            mp[arr[i]] += 1
-        except:
-            mp[arr[i]] = 1
-        heap = mp.keys()
-        heapq._heapify_max(heap)
-        res+=heap[0]
+    print(findWindowMaxSum(arr, k))
+    # res = 0
+    # heap = arr[:k]
+    # heapq._heapify_max(heap)
+    # res+=heap[0]
+    # j = 0
+    #
+    # mp = dict(Counter(heap))
+    # for i in range(k, n):
+    #     mp[arr[j]]-=1
+    #     if mp[arr[j]] ==0:
+    #         del mp[arr[j]]
+    #     try:
+    #         mp[arr[i]] += 1
+    #     except:
+    #         mp[arr[i]] = 1
+    #     heap = mp.keys()
+    #     heapq._heapify_max(heap)
+    #     res+=heap[0]
