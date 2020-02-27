@@ -2,7 +2,10 @@
 
 def isValid(st):
     # print(st)
-    return int(st) <= 25 and int(st) >=0
+    try:
+        return int(st) <= 25 and int(st) >=10
+    except:
+        return False
 
 
 def decodeString(arr, n, idx, dp):
@@ -24,3 +27,5 @@ if __name__ == '__main__':
     st = "00"
     dp = [-1]*len(st)
     print(decodeString(st, len(st), 0, dp))
+
+
