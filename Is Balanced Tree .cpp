@@ -1,8 +1,6 @@
-//https://www.hackerrank.com/contests/smart-interviews/challenges/si-tree-traversals/submissions/code/1320137621
-
-
 /*
-Given an array of unique elements, construct a Binary Search Tree and print the PreOrder, InOrder and PostOrder Traversals of the tree.
+https://www.hackerrank.com/contests/smart-interviews/challenges/si-is-balanced-tree/copy-from/1322085295
+Given an array of unique elements, construct a Binary Search Tree and check if its balanced. A tree is said to be balanced if for every node, the difference between the height of its child nodes is not greater than 1.
 
 Input Format
 
@@ -16,7 +14,7 @@ Constraints
 
 Output Format
 
-For each test case, print the PreOrder, InOrder and PostOrder Traversals of the Binary Search Tree, separate each traversal by newline. Separate the output of different test cases with an extra newline.
+For each test case, print "Yes" if the Binary Search Tree is balanced, "No" otherwise, separated by newline.
 
 Sample Input 0
 
@@ -30,25 +28,17 @@ Sample Input 0
 
 Sample Output 0
 
-1 2 3 4 5
-1 2 3 4 5
-5 4 3 2 1
+No
+Yes
+No
 
-3 2 1 4 5
-1 2 3 4 5
-1 2 5 4 3
+Explanation 0
 
-4 0 1 5 15 7 17
-0 1 4 5 7 15 17
-1 0 7 17 15 5 4
+Self Explanatory*/
 
 
-*/
-
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
+#include <bits/stdc++.h>
+using namespace std;
 
 struct Node{
     int val;
@@ -87,31 +77,29 @@ struct Node * insert(struct Node * node, int val){
     return node;
 }
 
-    void preOrder(struct Node * root){
-        if (root == NULL)
-            return;
+int getHeight(struct Node * root){
 
-        printf("%d ", root->val);
-        preOrder(root->left);
-        preOrder(root->right);
-    }
-
-void inOrder(struct Node * root){
     if (root == NULL)
-        return;
+        return 0;
 
-    inOrder(root->left);
-    printf("%d ", root->val);
-    inOrder(root->right);
+    int left = 1 + getHeight(root->left);
+    int right = 1 + getHeight(root->right);
+    return (left > right ? left:right);
 }
 
-void postOrder(struct Node * root){
-    if (root == NULL)
-        return;
+bool isBalancedTree(struct Node * root){
 
-    postOrder(root->left);
-    postOrder(root->right);
-    printf("%d ", root->val);
+    if(root == NULL)
+        return true;
+    int lh;
+    int rh;
+
+    lh = getHeight(root->left);
+    rh = getHeight(root->right);
+
+    if(abs(lh-rh)<=1 && isBalancedTree(root->left) && isBalancedTree(root->right))
+       return true;
+    return false;
 }
 
 int main() {
@@ -129,12 +117,10 @@ int main() {
             scanf("%d", &arr[j]);
             node = insert(node, arr[j]);
         }
-        preOrder(node);
-        printf("\n");
-        inOrder(node);
-        printf("\n");
-        postOrder(node);
-        printf("\n\n");
+        if(isBalancedTree(node))
+            printf("Yes\n");
+        else
+            printf("No\n");
     }
     return 0;
 }
