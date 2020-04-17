@@ -55,7 +55,6 @@ class Solution:
         res = [-1, -1]
         while (low <= high):
             mid = (low + high) // 2
-
             if (A[mid] == B):
                 res[0] = mid
                 high = mid - 1
@@ -76,4 +75,3 @@ class Solution:
             else:
                 low = mid + 1
         return res
-
