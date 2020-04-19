@@ -16,7 +16,6 @@
 
 
 def subsetUtil(arr,tempres, idx):
-    
     res.append(tempres)
     # print(res)
     # print(tempres)
