@@ -9,5 +9,9 @@ if (find(ans.begin(), ans.end(), temp) != ans.end())
     // contains
 }
 
+// 2d vector
+vector<vector<int> > L(n + 1, vector<int>(n + 1));
+// copy another vector
+vector<int> sortedseq(seq);
 
 }
