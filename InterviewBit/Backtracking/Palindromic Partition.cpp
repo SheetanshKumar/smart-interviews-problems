@@ -6,7 +6,6 @@ bool isPalindrome(string str, int x, int y) {
 	while (x<y)
 		if (str[x++] != str[y--])
 			return false;
-
 	return true;
 }
 
