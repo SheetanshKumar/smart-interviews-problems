@@ -82,7 +82,8 @@ public :
         v[1] = element;
         v.pop_back();
         int idx = 1;
-        while((2*idx +1 < v.size() && v[idx] > v[2 * idx+1]) || (2*idx < v.size() && v[idx] > v[2 * idx]))
+        while((2*idx +1 < v.size() && v[idx] > v[2 * idx+1])
+        || (2*idx < v.size() && v[idx] > v[2 * idx]))
         {
             if(2*idx +1 < v.size()){
                 if (v[2*idx+1] > v[2*idx]){
