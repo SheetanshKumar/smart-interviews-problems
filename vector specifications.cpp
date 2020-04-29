@@ -16,4 +16,8 @@ vector<vector<int> > vec( n , vector<int> (m, 0));
 // copy another vector
 vector<int> sortedseq(seq);
 
+// min heap
+priority_queue<pi, vector<pi>, greater<pi> >
+
+
 }

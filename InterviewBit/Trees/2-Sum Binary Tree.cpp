@@ -2,7 +2,8 @@
 https://www.interviewbit.com/problems/2sum-binary-tree/
 
 
-Given a binary search tree T, where each node contains a positive integer, and an integer K, you have to find whether or not there exist two different nodes A and B such that A.value + B.value = K.
+Given a binary search tree T, where each node contains a positive integer,
+and an integer K, you have to find whether or not there exist two different nodes A and B such that A.value + B.value = K.
 
 Return 1 to denote that two such nodes exist. Return 0, otherwise.
 

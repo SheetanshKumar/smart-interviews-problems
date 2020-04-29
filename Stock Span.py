@@ -1,10 +1,15 @@
 # https://www.hackerrank.com/contests/smart-interviews/challenges/si-stock-span/copy-from/1320297474
 
-'''You are given a series of daily price quotes for a stock and you need to calculate span of stock’s price for each day. The span Si of the stock’s price on current day i is defined as the maximum number of consecutive days just before the current day[including the current day], on which the price of the stock is less than or equal to its price on the current day.
+'''You are given a series of daily price quotes for a stock and you need to calculate span of stock’s price for each day.
+ The span Si of the stock’s price on current day i is defined as the maximum number of consecutive days just before the
+ current day[including the current day],
+ on which the price of the stock is less than or equal to its price on the current day.
 
 Input Format
 
-First line of input contains T - number of test cases. Its followed by 2T lines, the first line contains N - the size of the array. The second line contains N integers - the elements of the array, ith element denotes the stock price on ith day.
+First line of input contains T - number of test cases. Its followed by 2T lines, the first line contains N -
+the size of the array.
+The second line contains N integers - the elements of the array, ith element denotes the stock price on ith day.
 
 Constraints
 

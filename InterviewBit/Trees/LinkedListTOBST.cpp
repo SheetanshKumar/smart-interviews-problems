@@ -8,7 +8,7 @@ Node * LLtoBST(Node * head, int n){
 
     Node * root = newNode(head->data);
     root->left = left;
-
+    head = head->next;
     Node * right = LLtoBST(head, n - n/2 -1);
     root->right = right;
     return root;
