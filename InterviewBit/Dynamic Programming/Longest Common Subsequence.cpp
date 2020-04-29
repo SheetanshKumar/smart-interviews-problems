@@ -13,5 +13,26 @@ int longestCommonSubsequence(string a, string b) {
             }
         }
     }
+
+   int index = dp[a.size()][b.size()];
+   char lcs[index+1];
+   lcs[index] = '\0';
+
+   int i = a.size(), j = b.size();
+   while (i > 0 && j > 0)
+   {
+
+      if (a[i-1] == b[j-1])
+      {
+          lcs[index-1] = a[i-1];
+          i--; j--; index--;
+      }
+      else if (dp[i-1][j] > dp[i][j-1])
+         i--;
+      else
+         j--;
+   }
+
+
     return dp[a.size()][b.size()];
 }
