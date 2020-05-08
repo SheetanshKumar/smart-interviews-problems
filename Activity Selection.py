@@ -1,8 +1,14 @@
-'''Given a set of activities with start time and finish time, find the maximum number of non-overlapping activities.
+'''Given a set of activities with start time and finish time,
+find the maximum number of non-overlapping activities.
 
 Input Format
 
-First line of input contains T - number of test cases. Its followed by 3T lines. First line of each test case contains N - number of activities. The second line contains N integers - start time of the activities, ith element denotes start time of ith activity. The third line contains N integers - finish time of the activities, ith element denotes finish time of ith activity.
+First line of input contains T - number of test cases. Its followed by 3T lines.
+First line of each test case contains N - number of activities.
+The second line contains N integers - start time of the activities,
+ith element denotes start time of ith activity.
+The third line contains N integers - finish time of the activities,
+ith element denotes finish time of ith activity.
 
 Constraints
 

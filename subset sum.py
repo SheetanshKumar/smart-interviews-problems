@@ -15,4 +15,5 @@ def subsetsum(arr, idx, res, s):
             return True
     # print()
     return False
+
 print(subsetsum([1,2,3,4], 0,0, 12))
