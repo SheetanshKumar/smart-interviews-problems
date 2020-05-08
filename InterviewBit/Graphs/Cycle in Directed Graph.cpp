@@ -4,7 +4,7 @@ bool dfs(vector<vector<int>> &G, unordered_set<int> &white,  unordered_set<int> 
     for(int i = 0; i < G[vertex].size(); i++){
         if(black.find(G[vertex][i]) != black.end())
             continue;
-        if(grey.find(G[vertex][i]) != white.end())
+        if(grey.find(G[vertex][i]) != grey.end())
             return true;
         if(dfs(G, white, grey, black, G[vertex][i]))
             return true;
