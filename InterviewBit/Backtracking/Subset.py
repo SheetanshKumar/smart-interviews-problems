@@ -18,7 +18,7 @@
 def subsetUtil(arr,tempres, idx):
     res.append(tempres)
     # print(res)
-    # print(tempres)
+    print(tempres)
     for i in range(idx, len(arr)):
         tempres.append(arr[i])
         subsetUtil(arr,tempres, i+1)
@@ -33,5 +33,5 @@ def subset(A):
     temp = res
     return temp
 
-subset([1])
+subset([1,2,3])
 print(res)
